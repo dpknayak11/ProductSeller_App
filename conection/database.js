@@ -1,6 +1,11 @@
 const Sequelize = require('sequelize').Sequelize;
 
-const sequelize = new Sequelize('node-Sellers_project', 'root', 'root',{
-    host: 'localhost',dialect: 'mysql'
+const sequelize = new Sequelize(
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
+    {
+    host: process.env.HOST_NAME,
+    dialect: 'mysql'
 })
 module.exports = sequelize;
